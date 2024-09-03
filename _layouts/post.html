@@ -64,11 +64,8 @@ tail_includes:
           <em>
             {% if authors %}
               {% for author in authors %}
-                {% if site.data.authors[author].url -%}
-                  <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-                {%- else -%}
-                  {{ site.data.authors[author].name }}
-                {%- endif %}
+                {% assign site_author = site.authors | where: 'short_name', author | first %}
+                <a href="/authors/{{ site_author.short_name }}">{{ site_author.name }}</a>
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
               {% endfor %}
             {% else %}
