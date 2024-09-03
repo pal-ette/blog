@@ -7,7 +7,10 @@ layout: page
   {% for author in site.authors %}
   <article class="col">
     <a href="{{ author.url }}" class="post-preview card h-100">
-      <img src="https://github.com/{{ author.github }}.png" alt="{{ author.github }} />
+      <img
+        src="https://github.com/{{ author.github }}.png"
+        alt="{{ author.github }}"
+      />
       <div class="card-body">
         <h4 class="pt-0 my-2">{{ author.name }}</h4>
         <div class="text-muted">
